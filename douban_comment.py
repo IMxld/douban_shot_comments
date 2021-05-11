@@ -47,7 +47,7 @@ for i in url_list:
     else:
         pass
 
-    #frashing referer
+    #refreshing referer
     header = {'User-Agent':user_agent,
               'Accept-Encoding': 'gzip, deflate',
               'Cookie':cookie_now,
