@@ -31,10 +31,18 @@ while True:
 print('\n')
 
 #create and open 'datas.csv'
+files_exist = 1
+try:
+    datas = open('datas.csv', encoding = 'utf-8-sig', newline = '')
+except IOError:
+    files_exist = 0
 datas = open('datas.csv', 'a', encoding = 'utf-8-sig', newline = '')
 bloumn_name = ['movie_name','movie_url','user_name','user_url','icon_url','have_seen','star','star_discribe','comment_time','used','comment']
 pen = csv.DictWriter(datas, fieldnames = bloumn_name)
-pen.writeheader()
+if files_exist == 0:
+    pen.writeheader()
+else:
+    pass
 
 err = 0#for checking if there is any abnormality
 
@@ -71,7 +79,7 @@ for i in url_list:
             html = res.read()
             html = zlib.decompress(html, 16+zlib.MAX_WBITS).decode('utf-8')
         except urllib.error.HTTPError:
-            print('Error in request to open the webpage! Douban may find that we are python program, please check and try again!')
+            print('Error in request to open the webpage! Douban may find that we are python program, or url is wrong, please check and try again!')
             err += 1
             break
 
