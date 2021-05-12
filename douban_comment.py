@@ -90,7 +90,11 @@ for i in url_list:
         #checking if information were lost
         #and checking if the number of all shot-comments is less than 500 
         #if not, getting information without checking if information were lost at the last page
-        comment_num = int(re.search(r'(?<=<span>看过\()\d*?(?=\)</span>)', html).group())#getting the number of all shot-comments
+        try:
+            comment_num = int(re.search(r'(?<=<span>看过\()\d*?(?=\)</span>)', html).group())#getting the number of all shot-comments
+        except AttributeError:
+            print('The movie has not been shown yet! Unable to get the related short-comment information!')
+            comment_num = 0
         if comment_num < 500:
             if int(int(page)/20) < int(comment_num / 20):
                 if len(user_name_and_adress) != 20:
