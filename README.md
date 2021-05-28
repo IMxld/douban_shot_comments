@@ -15,4 +15,4 @@ Third, 'Python 3.9(32-bit)'.
 
 Forth, I exchanged all of r'\n' to r'\s' in comments.
 
-Fifth, csv package may show you '\*\*\*' in column 'comment_time' and '&#34' in column 'comment'.
+Fifth, csv package may show you '###' in column 'comment_time' and '&#34' in column 'comment'.
