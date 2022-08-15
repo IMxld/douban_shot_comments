@@ -11,7 +11,7 @@
 一，把要爬取的电影的链接全部放进url_list.txt中，格式可以参照现有文件，一行一条网址。
 
 二，在cookie.txt和user_agent.txt中填入自己的信息。
-tips：cookie和user-agent的获取步骤：【登录豆瓣】→【随便在一个登录过的豆瓣网页内右键】→【查看网页源代码（或者按F12）】→【菜单栏选Network】→【Ctrl+R】→【一般来说在name栏目点击第一个项目】→【在新出现的区域里找到Header-Request Headers-cookie&user-agent】
+tips：cookie和user-agent的获取步骤：【登录豆瓣】→【随便在一个登录过的豆瓣网页内右键】→【查看网页源代码（或者按F12）】→【菜单栏选Network】→【Ctrl+R】→【一般来说在name栏目点击第一个项目】→【在新出现的区域里找到（Header）-（Request Headers）-（cookie）&（user-agent）】
 
 三，运行环境>=Python3.9。
 
