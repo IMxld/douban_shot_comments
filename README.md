@@ -1,18 +1,20 @@
-# douban_comment
-This program is making for getting shot-comment-information from movie.douban.com.
-## Some words
-In fact, this program is just a homework. But when I finished coding my program, I found that it seems can be a tool to getting every movie's shot-comment-information.
+# Hello！
+这是我投在GitHub上的第一个项目，也是本科期间为了应付作业写的一个还算完整的程序（因为是应付作业临时一用所以没写详细的注释
 
-正直言って、私は英語があまり使えない。ときどき頭の中で日本語を自動翻訳して。でも、英語試験があるんだ、我慢して！
+如果能对看到这里的你有帮助的话就再好不过了！
+## 介绍
+总而言之这玩意是用来爬取豆瓣电影的短评用的，想当初技术不成熟还只会单线程，比较慢不说还容易被查出是爬虫，但结果上来说还是比八爪鱼好使的（并不
 
-所以使用中日英三语留言都是ok的
-## Help
-First, you need to make a url list, as 'url_list.txt'. If you save that file with wrong url or format, the program will report an error.
+很可惜的是我不会再修改这个代码了（懒），所以，如果真要用就麻烦你自己优化一下啦（XD
+## 使用指引
 
-Second, you need to refresh your own cookie and user-agent in 'cookie.txt' and 'user_agent.txt'.
+一，把要爬取的电影的链接全部放进url_list.txt中，格式可以参照现有文件，一行一条网址。
 
-Third, 'Python 3.9(32-bit)'.
+二，在cookie.txt和user_agent.txt中填入自己的信息。
+tips：cookie和user-agent的获取步骤：【登录豆瓣】→【随便在一个登录过的豆瓣网页内右键】→【查看网页源代码（或者按F12）】→【菜单栏选Network】→【Ctrl+R】→【一般来说在name栏目点击第一个项目】→【在新出现的区域里找到Header-Request Headers-cookie&user-agent】
 
-Forth, I exchanged all of r'\n' to r'\s' in comments.
+三，运行环境>=Python3.9。
 
-Fifth, csv package may show you '###' in column 'comment_time' and '&#34' in column 'comment'.
+四，我把评论中所有的换行符和空字符全部干掉了。
+
+五，因为是保存为csv文件，所以在评论时间一列可能出现###，把列宽拉高就解决了。以及评论一列可能会出现&#34，那是双引号的转义。
